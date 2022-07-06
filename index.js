@@ -21,7 +21,8 @@ hbs.registerPartials(partials);
 
 
 app.get("/",(req,res)=>{
-    res.send("<h1>Bhai sahab kidaaan??</h1>");
+    res.status(200).render('home');
+    // res.send("<h1>Hello Dude!</h1>");
 })
 
 
