@@ -74,11 +74,11 @@ app.get('/register', (req,res)=>{
     res.status(200).render('register');
 });
 app.get("/about",(req,res)=>{
-    // if(req.session.email){
+    if(req.session.email){
         res.status(200).render("about");
-    // }else{
-    //     res.redirect('/');
-    // }
+    }else{
+        res.redirect('/');
+    }
 })
 app.get("/inventory",(req,res)=>{
     if(req.session.email){
