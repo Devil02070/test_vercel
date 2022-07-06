@@ -54,7 +54,8 @@ hbs.registerPartials(common_file_path);
 
 //routing
 app.get('/', (req,res)=>{
-    res.render('login');
+    res.send('kidaan??')
+    // res.render('login');
 });
 app.get('/index', (req,res)=>{
     // console.log(req.session);
