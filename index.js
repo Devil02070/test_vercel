@@ -53,6 +53,7 @@ app.set("views", temp_path);
 hbs.registerPartials(common_file_path);
 
 //routing
+
 app.get('/', (req,res)=>{
     res.render('login');
 });
@@ -125,6 +126,7 @@ app.listen(port, ()=>{
     console.log(`Server running at port ${port}`); 
 })
 
+
 //register
 app.post("/register", async (req,res)=>{
     try{
@@ -190,6 +192,7 @@ app.post('/login',async(req,res)=>{
             //     current_user: name
             // });
             sess = req.session;
+            console.log(sess);
             sess.name = user_email.name;
             sess.email = user_email.email;
             sess.number = user_email.number;
