@@ -74,9 +74,9 @@ app.get('/register', (req,res)=>{
     res.status(200).render('register');
 });
 app.get("/about",(req,res)=>{
-    sess = req.session;
-    if(sess.email){
-        res.render("about");
+    if(req.session.email){
+        // res.render("about");
+        res.send("email to h");
     }else{
         res.redirect('/');
     }
@@ -98,7 +98,7 @@ app.get("/contact_us",(req,res)=>{
 app.get('/account',(req,res)=>{
     if(req.session.email){
         res.render('account',{
-            user_id: req.sessionID,
+            user_id: req.session.user_id,
             current_user: req.session.name,
             c_user_email: req.session.email,
             c_user_number: req.session.number
@@ -111,7 +111,7 @@ app.get('/account',(req,res)=>{
 app.get("/user_dashboard",(req,res)=>{
     res.status(200).render("user_dashboard");
 })
-app.get("/logout", (req,res)=>{
+app.get("/logout", (req,res)=>{f
     req.session.destroy((err)=>{
         if(err){
             console.log(err)
@@ -193,6 +193,7 @@ app.post('/login',async(req,res)=>{
             sess.name = user_email.name;
             sess.email = user_email.email;
             sess.number = user_email.number;
+            sess.user_id = user_email._id;
             res.redirect('/index');
         }else{
             // res.send('Invalid Details');
