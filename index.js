@@ -75,10 +75,9 @@ app.get('/register', (req,res)=>{
 });
 app.get("/about",(req,res)=>{
     if(req.session.email){
-        // res.render("about");
-        res.send("email to h");
+        res.render("about");
     }else{
-        res.send("email to h hi ni");
+        res.send("kuch To gadbad h Dude...!!!");
         // res.redirect('/');
     }
 })
