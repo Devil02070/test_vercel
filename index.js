@@ -96,16 +96,16 @@ app.get("/contact_us",(req,res)=>{
     }
 });
 app.get('/account',(req,res)=>{
-    if(req.session.email){
+    // if(req.session.email){
         res.render('account',{
             user_id: req.sessionID,
             current_user: req.session.name,
             c_user_email: req.session.email,
             c_user_number: req.session.number
         });
-    }else{
-        res.redirect('/');
-    }
+    // }else{
+    //     res.redirect('/');
+    // }
     // res.status(200).render("account");
 })
 app.get("/user_dashboard",(req,res)=>{
