@@ -78,7 +78,8 @@ app.get("/about",(req,res)=>{
         // res.render("about");
         res.send("email to h");
     }else{
-        res.redirect('/');
+        res.send("email to h hi ni");
+        // res.redirect('/');
     }
 })
 app.get("/inventory",(req,res)=>{
