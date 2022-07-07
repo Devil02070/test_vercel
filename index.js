@@ -77,8 +77,8 @@ app.get("/about",(req,res)=>{
     if(req.session.email){
         res.render("about");
     }else{
-        res.send("kuch To gadbad h Dude...!!!");
-        // res.redirect('/');
+        // res.send("kuch To gadbad h Dude...!!!");
+        res.redirect('/');
     }
 })
 app.get("/inventory",(req,res)=>{
