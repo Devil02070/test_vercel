@@ -74,7 +74,8 @@ app.get('/register', (req,res)=>{
     res.status(200).render('register');
 });
 app.get("/about",(req,res)=>{
-    if(req.session.email){
+    sess = req.session;
+    if(sess.email){
         res.render("about");
     }else{
         res.redirect('/');
