@@ -57,6 +57,12 @@ hbs.registerPartials(common_file_path);
 app.get('/', (req,res)=>{
     res.render('login');
 });
+app.get('/login', (req,res)=>{
+    res.status(200).render('login');
+});
+app.get('/register', (req,res)=>{
+    res.status(200).render('register');
+});
 app.get('/index', (req,res)=>{
     // console.log(req.session);
     if(req.session.email){
@@ -67,49 +73,42 @@ app.get('/index', (req,res)=>{
     }else{
         res.redirect('/');
     }
-
-    app.get("/about",(req,res)=>{
-        if(req.session.email){
-            res.render("about");
-        }else{
-            // res.send("kuch To gadbad h Dude...!!!");
-            res.redirect('/');
-        }
-    });
 });
-app.get('/login', (req,res)=>{
-    res.status(200).render('login');
-});
-app.get('/register', (req,res)=>{
-    res.status(200).render('register');
+app.get("/about",(req,res)=>{
+    // if(req.session.email){
+        res.render("about");
+    // }else{
+        // res.send("kuch To gadbad h Dude...!!!");
+        // res.redirect('/');
+    // }
 });
 app.get("/inventory",(req,res)=>{
-    if(req.session.email){
+    // if(req.session.email){
     res.status(200).render("inventory");
-    }else{
-        res.redirect('/');
-    }
-})
-app.get("/contact_us",(req,res)=>{
-    if(req.session.email){
-    res.status(200).render("contact_us");
-    }else{
-        res.redirect('/');
-    }
+    // }else{
+    //     res.redirect('/');
+    // }
 });
 app.get('/account',(req,res)=>{
-    if(req.session.email){
+    // if(req.session.email){
         res.render('account',{
             user_id: req.session.user_id,
             current_user: req.session.name,
             c_user_email: req.session.email,
             c_user_number: req.session.number
         });
-    }else{
-        res.redirect('/');
-    }
+    // }else{
+    //     res.redirect('/');
+    // }
     // res.status(200).render("account");
-})
+});
+app.get("/contact_us",(req,res)=>{
+    // if(req.session.email){
+    res.status(200).render("contact_us");
+    // }else{
+    //     res.redirect('/');
+    // }
+});
 app.get("/logout", (req,res)=>{
     req.session.destroy((err)=>{
         if(err){
