@@ -109,10 +109,7 @@ app.get('/account',(req,res)=>{
     }
     // res.status(200).render("account");
 })
-app.get("/user_dashboard",(req,res)=>{
-    res.status(200).render("user_dashboard");
-})
-app.get("/logout", (req,res)=>{f
+app.get("/logout", (req,res)=>{
     req.session.destroy((err)=>{
         if(err){
             console.log(err)
