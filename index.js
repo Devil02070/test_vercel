@@ -34,7 +34,7 @@ const session = require('express-session');
 app.use(session({
     secret: 'unicornsoulcoder',
     resave: false,
-    saveUninitialized: turue,
+    saveUninitialized: true,
 }))
 
 require("./source/db/conn");
