@@ -190,7 +190,7 @@ app.post('/login',async(req,res)=>{
             //     current_user: name
             // });
             sess = req.session;
-            Session.save();
+            sess.save();
             sess.name = user_email.name;
             sess.email = user_email.email;
             sess.number = user_email.number;
