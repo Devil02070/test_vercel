@@ -55,6 +55,7 @@ hbs.registerPartials(common_file_path);
 //routing
 
 app.get('/', (req,res)=>{
+    req.session.save();
     res.render('login');
 });
 app.get('/login', (req,res)=>{
@@ -65,10 +66,10 @@ app.get('/register', (req,res)=>{
 });
 app.get('/index', (req,res)=>{
     // console.log(req.session);
-    if(req.session.email){
+    if(sess){
         res.render('index',{
-            current_user: req.session.name,
-            c_user_email: req.session.email
+            current_user: sess.name,
+            c_user_email: sess.email
         });
     }else{
         res.redirect('/');
@@ -189,8 +190,6 @@ app.post('/login',async(req,res)=>{
             //     current_user: name
             // });
             sess = req.session;
-            sess.save();
-            // req.session.save();
             console.log(sess);
             sess.name = user_email.name;
             sess.email = user_email.email;
