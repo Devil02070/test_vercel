@@ -67,6 +67,15 @@ app.get('/index', (req,res)=>{
     }else{
         res.redirect('/');
     }
+
+    app.get("/about",(req,res)=>{
+        if(req.session.email){
+            res.render("about");
+        }else{
+            // res.send("kuch To gadbad h Dude...!!!");
+            res.redirect('/');
+        }
+    });
 });
 app.get('/login', (req,res)=>{
     res.status(200).render('login');
@@ -74,14 +83,6 @@ app.get('/login', (req,res)=>{
 app.get('/register', (req,res)=>{
     res.status(200).render('register');
 });
-app.get("/about",(req,res)=>{
-    if(req.session.email){
-        res.render("about");
-    }else{
-        // res.send("kuch To gadbad h Dude...!!!");
-        res.redirect('/');
-    }
-})
 app.get("/inventory",(req,res)=>{
     if(req.session.email){
     res.status(200).render("inventory");
