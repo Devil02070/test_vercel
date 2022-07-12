@@ -195,8 +195,8 @@ app.post('/login',async(req,res)=>{
             sess.email = user_email.email;
             sess.number = user_email.number;
             sess.user_id = user_email._id;
-            // res.redirect('/index');
-            res.status(200).render('index');
+            res.redirect('/index');
+            // res.status(200).render('index');
         }else{
             // res.send('Invalid Details');
             res.redirect('/');
