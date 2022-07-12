@@ -184,17 +184,16 @@ app.post('/login',async(req,res)=>{
         const user_email = await Register.findOne({email:email}); 
         const name = user_email.name;
         if(user_email.password === password){
-            // res.send("welcome to dashboard");
-            // res.status(200).send("index"); 
             // res.render("index", {
             //     current_user: name
             // });
             sess = req.session;
-            sess.save();
+            // sess.save();
             sess.name = user_email.name;
             sess.email = user_email.email;
             sess.number = user_email.number;
             sess.user_id = user_email._id;
+            sess.save();
             res.redirect('/index');
             // res.status(200).render('index');
         }else{
