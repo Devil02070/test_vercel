@@ -34,7 +34,7 @@ const session = require('express-session');
 app.use(session({
     secret: 'unicornsoulcoder',
     resave: false,
-    saveUninitialized: false,
+    saveUninitialized: turue,
 }))
 
 require("./source/db/conn");
@@ -79,7 +79,7 @@ app.get("/about",(req,res)=>{
         res.render("about");
     }else{
         res.send("kuch To gadbad h Dude...!!!");
-        res.redirect('/');
+        // res.redirect('/');
     }
 });
 app.get("/inventory",(req,res)=>{
