@@ -3,6 +3,8 @@
     "express": "^4.18.1",
     "express-session": "^1.17.3",
     "hbs": "^4.2.0",
+    "jquery": "^3.6.0",
+    "jsdom": "^20.0.0",
     "mongoose": "^6.4.3",
     "nodemon": "^2.0.18",
     "path": "^0.12.7",
@@ -17,5 +19,14 @@
   },
   "author": "",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Devil02070/test_vercel.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/Devil02070/test_vercel/issues"
+  },
+  "homepage": "https://github.com/Devil02070/test_vercel#readme",
   "description": ""
 }
