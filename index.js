@@ -66,10 +66,10 @@ app.get('/register', (req,res)=>{
 });
 app.get('/index', (req,res)=>{
     // console.log(req.session);
-    if(sess){
+    if(req.session.email){
         res.render('index',{
-            current_user: sess.name,
-            c_user_email: sess.email
+            current_user: req.session.name,
+            c_user_email: req.session.email
         });
     }else{
         res.redirect('/');
