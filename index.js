@@ -35,7 +35,9 @@ app.use(session({
     secret: 'unicornsoulcoder',
     resave: false,
     saveUninitialized: true,
+    cookie: { secure: true }
 }))
+
 
 require("./source/db/conn");
 const Register = require('./source/models/registers');
@@ -199,7 +201,7 @@ app.post('/login',async(req,res)=>{
         }else{
             // res.send('Invalid Details');
             // res.redirect('/');
-            res.render('/',{
+            res.render('login',{
                 login_err: "Invalid password.."
             })
         }
