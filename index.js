@@ -75,39 +75,39 @@ app.get('/index', (req,res)=>{
     }
 });
 app.get("/about",(req,res)=>{
-    // if(req.session.email){
+    if(req.session.email){
         res.render("about");
-    // }else{
-        // res.send("kuch To gadbad h Dude...!!!");
-        // res.redirect('/');
-    // }
+    }else{
+        res.send("kuch To gadbad h Dude...!!!");
+        res.redirect('/');
+    }
 });
 app.get("/inventory",(req,res)=>{
-    // if(req.session.email){
+    if(req.session.email){
     res.status(200).render("inventory");
-    // }else{
-    //     res.redirect('/');
-    // }
+    }else{
+        res.redirect('/');
+    }
 });
 app.get('/account',(req,res)=>{
-    // if(req.session.email){
+    if(req.session.email){
         res.render('account',{
             user_id: req.session.user_id,
             current_user: req.session.name,
             c_user_email: req.session.email,
             c_user_number: req.session.number
         });
-    // }else{
-    //     res.redirect('/');
-    // }
+    }else{
+        res.redirect('/');
+    }
     // res.status(200).render("account");
 });
 app.get("/contact_us",(req,res)=>{
-    // if(req.session.email){
+    if(req.session.email){
     res.status(200).render("contact_us");
-    // }else{
-    //     res.redirect('/');
-    // }
+    }else{
+        res.redirect('/');
+    }
 });
 app.get("/logout", (req,res)=>{
     req.session.destroy((err)=>{
@@ -189,6 +189,8 @@ app.post('/login',async(req,res)=>{
             //     current_user: name
             // });
             sess = req.session;
+            sess.save();
+            // req.session.save();
             console.log(sess);
             sess.name = user_email.name;
             sess.email = user_email.email;
