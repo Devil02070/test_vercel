@@ -66,7 +66,7 @@ app.get('/register', (req,res)=>{
 });
 app.get('/index', (req,res)=>{
     // console.log(req.session);
-    if(req.session.email){
+    if(req.session){
         req.session.save();
         res.render('index',{
             current_user: req.session.name,
@@ -85,14 +85,14 @@ app.get("/about",(req,res)=>{
     }
 });
 app.get("/inventory",(req,res)=>{
-    if(req.session.email){
+    if(req.session){
     res.status(200).render("inventory");
     }else{
         res.redirect('/');
     }
 });
 app.get('/account',(req,res)=>{
-    if(req.session.email){
+    if(req.session){
         res.render('account',{
             user_id: req.session.user_id,
             current_user: req.session.name,
@@ -105,7 +105,7 @@ app.get('/account',(req,res)=>{
     // res.status(200).render("account");
 });
 app.get("/contact_us",(req,res)=>{
-    if(req.session.email){
+    if(req.session){
     res.status(200).render("contact_us");
     }else{
         res.redirect('/');
