@@ -59,9 +59,9 @@ app.get('/', (req,res)=>{
     req.session.save();
     res.render('login');
 });
-app.get('/login', (req,res)=>{
-    res.status(200).render('login');
-});
+// app.get('/', (req,res)=>{
+//     res.status(200).render('login');
+// });
 app.get('/register', (req,res)=>{
     res.status(200).render('register');
 });
@@ -189,7 +189,7 @@ app.post('/login',async(req,res)=>{
             // });
             sess = req.session;
             // sess.save();
-            sess.name = user_email.name;
+            sess.name = name;
             sess.email = user_email.email;
             sess.number = user_email.number;
             sess.user_id = user_email._id;
@@ -198,10 +198,10 @@ app.post('/login',async(req,res)=>{
             // res.status(200).render('index');
         }else{
             // res.send('Invalid Details');
-            res.redirect('/');
-            // res.render('login',{
-            //     login_err: "Invalid password.."
-            // })
+            // res.redirect('/');
+            res.render('/',{
+                login_err: "Invalid password.."
+            })
         }
     }catch(error){
         res.redirect('/');
