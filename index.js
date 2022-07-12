@@ -35,9 +35,7 @@ app.use(session({
     secret: 'unicornsoulcoder',
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: true }
 }))
-
 
 require("./source/db/conn");
 const Register = require('./source/models/registers');
@@ -58,6 +56,10 @@ hbs.registerPartials(common_file_path);
 //routing
 
 app.get('/', (req,res)=>{
+    req.session.save();
+    res.render('login');
+});
+app.get('/login', (req,res)=>{
     req.session.save();
     res.render('login');
 });
