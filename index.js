@@ -67,6 +67,7 @@ app.get('/register', (req,res)=>{
 app.get('/index', (req,res)=>{
     // console.log(req.session);
     if(req.session.email){
+        req.session.save();
         res.render('index',{
             current_user: req.session.name,
             c_user_email: req.session.email
@@ -76,7 +77,7 @@ app.get('/index', (req,res)=>{
     }
 });
 app.get("/about",(req,res)=>{
-    if(req.session.email){
+    if(req.session){
         res.render("about");
     }else{
         res.send("kuch To gadbad h Dude...!!!");
