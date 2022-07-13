@@ -33,7 +33,7 @@ const hbs = require("hbs");
 const session = require('express-session');
 app.use(session({
     secret: 'unicornsoulcoder',
-    resave: false,
+    resave: true,
     saveUninitialized: true,
 }))
 
@@ -81,6 +81,7 @@ app.get('/index', (req,res)=>{
     }
 });
 app.get("/about",(req,res)=>{
+    sess = req.session;
     if(req.session.email){
         res.redirect("/about");
     }else{
