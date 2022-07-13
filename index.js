@@ -82,7 +82,7 @@ app.get('/index', (req,res)=>{
 });
 app.get("/about",(req,res)=>{
     if(req.session.email){
-        res.redirect("about");
+        res.redirect("/about");
     }else{
         res.redirect('/');
     }
