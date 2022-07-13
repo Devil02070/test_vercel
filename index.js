@@ -82,7 +82,7 @@ app.get('/index', (req,res)=>{
 });
 app.get("/about",(req,res)=>{
     if(req.session.email){
-        res.render("about");
+        res.redirect("about");
     }else{
         res.redirect('/');
     }
@@ -134,7 +134,6 @@ app.post("/register", async (req,res)=>{
     try{
         const password = req.body.password;
         const confirm_password = req.body.confirmpassword;
-
         if(password === confirm_password){
             const Reg_Student = new Register({
                 name: req.body.name,
