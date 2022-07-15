@@ -53,22 +53,17 @@ app.set('view engine', 'hbs');
 app.set("views", temp_path);
 hbs.registerPartials(common_file_path);
 
-//routing
-
-app.get('/', (req,res)=>{
-    res.render('login');
-});
+//routing----------------------------------------------------------------**>>
 app.get('/login', (req,res)=>{
     res.render('login');
 });
-// app.get('/', (req,res)=>{
-//     res.status(200).render('login');
-// });
+app.get('/', (req,res)=>{
+    res.status(200).render('login');
+});
 app.get('/register', (req,res)=>{
     res.status(200).render('register');
 });
 app.get('/index', (req,res)=>{
-    // console.log(req.session);
     if(req.session.name){
         res.render('index',{
             current_user: req.session.name,
@@ -79,14 +74,14 @@ app.get('/index', (req,res)=>{
     }
 });
 app.get("/about",(req,res)=>{
-    if(req.session.name){
+    if(req.session.email){
         res.render("about");
     }else{
         res.redirect('/');
     }
 });
 app.get("/inventory",(req,res)=>{
-    if(req.session.name){
+    if(req.session.email){
     res.status(200).render("inventory");
     }else{
         res.redirect('/');
@@ -103,7 +98,6 @@ app.get('/account',(req,res)=>{
     }else{
         res.redirect('/');
     }
-    // res.status(200).render("account");
 });
 app.get("/contact_us",(req,res)=>{
     if(req.session.email){
@@ -185,19 +179,18 @@ app.post('/login',async(req,res)=>{
         const user_email = await Register.findOne({email:email}); 
         const name = user_email.name;
         if(user_email.password === password){
-            // res.render("index", {
-            //     current_user: name
-            // });
-            // sess = req.session;
+
             req.session.name = name;
+            req.session.email = user_email.email;
+            req.session.number = user_email.number;
+            req.session.user_id = user_email._id;
+            // sess = req.session;
             // sess.name = name;
             // sess.email = user_email.email;
             // sess.number = user_email.number;
             // sess.user_id = user_email._id;
             res.redirect('/index');
-            // res.status(200).render('index');
         }else{
-            // res.send('Invalid Details');
             // res.redirect('/');
             res.render('login',{
                 login_err: "Invalid password.."
