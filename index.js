@@ -32,7 +32,7 @@ const hbs = require("hbs");
 
 const session = require('express-session');
 app.use(session({
-    secret: 'unicornsoulcoder',
+    secret: 'asdfhrfbgjhgr',
     resave: false,
     saveUninitialized: true,
 }))
@@ -56,11 +56,9 @@ hbs.registerPartials(common_file_path);
 //routing
 
 app.get('/', (req,res)=>{
-    req.session.save();
     res.render('login');
 });
 app.get('/login', (req,res)=>{
-    req.session.save();
     res.render('login');
 });
 // app.get('/', (req,res)=>{
@@ -71,7 +69,7 @@ app.get('/register', (req,res)=>{
 });
 app.get('/index', (req,res)=>{
     // console.log(req.session);
-    if(req.session.email){
+    if(req.session.name){
         res.render('index',{
             current_user: req.session.name,
             c_user_email: req.session.email
@@ -81,14 +79,14 @@ app.get('/index', (req,res)=>{
     }
 });
 app.get("/about",(req,res)=>{
-    if(req.session.email){
+    if(req.session.name){
         res.render("about");
     }else{
         res.redirect('/');
     }
 });
 app.get("/inventory",(req,res)=>{
-    if(req.session.email){
+    if(req.session.name){
     res.status(200).render("inventory");
     }else{
         res.redirect('/');
@@ -190,13 +188,12 @@ app.post('/login',async(req,res)=>{
             // res.render("index", {
             //     current_user: name
             // });
-            sess = req.session;
-            // sess.save();
-            sess.name = name;
-            sess.email = user_email.email;
-            sess.number = user_email.number;
-            sess.user_id = user_email._id;
-            sess.save();
+            // sess = req.session;
+            req.session.name = name;
+            // sess.name = name;
+            // sess.email = user_email.email;
+            // sess.number = user_email.number;
+            // sess.user_id = user_email._id;
             res.redirect('/index');
             // res.status(200).render('index');
         }else{
