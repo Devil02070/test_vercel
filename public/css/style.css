@@ -48,7 +48,7 @@
 }
 
 /* ---------------------------------------Login-------------------------------- */
-.login-sec,.reg-sec{
+.login-sec,.reg-sec,.banner{
     height: 100vh;
 }
 .reg-sec{
