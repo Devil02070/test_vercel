@@ -204,4 +204,3 @@ app.post('/login',async(req,res)=>{
         // res.status(400).send("Invalid email! Please Register First.");
     }
 })
-
