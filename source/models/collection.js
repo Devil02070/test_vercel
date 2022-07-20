@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const CollectionSchema = new mongoose.schema({
+const CollectionSchema = new mongoose.Schema({
     name: String,
 	desc: String,
 	img:
@@ -8,7 +8,7 @@ const CollectionSchema = new mongoose.schema({
 		data: Buffer,
 		contentType: String
 	}
-})
+});
 
 const Collection = new mongoose.model('Collection',CollectionSchema);
 
