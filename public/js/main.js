@@ -21,5 +21,5 @@ function get_collection(){
 function get_MP(){
     console.log('hii');
     document.getElementById('collection-section').style.display = 'none';
-    document.getElementById('mp-section').style.displat = 'block';
+    document.getElementById('mp-section').style.display = 'block';
 }
