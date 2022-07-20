@@ -16,16 +16,24 @@
         <div class="row pt-3">
             <div class="col-3 collection border border-secondary rounded">
                 <button class="btn bg-none text-white text-start w-100 py-3 px-4"
-                    onclick="get_collection()">Collection</button>
+                    onclick="get_collection()">COLLECTION</button>
             </div>
-            <div class="col-2 market border border-secondary rounded">
-                <button class="btn bg-none text-white text-start w-100 py-3 px-4"
-                    onclick="get_MP()">Marketplace</button>
+            <div class="col-3 market border border-secondary rounded">
+                <button class="btn bg-none text-white text-start w-100 py-3 px-5" 
+                    onclick="get_marketplace()">LATEST PROJECTS</button>
             </div>
-            <div class="col-7"></div>
+            <div class="col-6"></div>
         </div>
     </div>
     <div class="container collection-section" id="collection-section">
+        <div class="row">
+            <div class="col-12 pt-5">
+                <form action="">
+                    <input type="file" placeholder="upload image">
+                    <input type="submit" name="" id="" class="btn btn-outline-success">
+                </form>
+            </div>
+        </div>
         <div class="row text-center">
             <div class="col-3 border border-secondary border-1 rounded py-4 my-3 mx-5">
                 <img src="img/8837.webp" alt="" class="w-100">
@@ -55,8 +63,8 @@
             </div>
         </div>
     </div>
-    <div class="container mp-section d-none" id="mp-section">
-        <div class="row">
+    <div class="container market-section" id="market-section">
+        <div class="row pt-3">
             <div class="col-12">
                 <h4>Latest Projects:</h4>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, quo deserunt. Pariatur cum

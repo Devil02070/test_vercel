@@ -16,10 +16,9 @@ function user_history(){
 
 function get_collection(){
     document.getElementById('collection-section').style.display = 'block';
-    document.getElementById('mp-section').style.displat = 'none';
+    document.getElementById('market-section').style.display = 'none';
 }
-function get_MP(){
-    console.log('hii');
+function get_marketplace(){
+    document.getElementById('market-section').style.display = 'block';
     document.getElementById('collection-section').style.display = 'none';
-    document.getElementById('mp-section').style.display = 'block';
 }

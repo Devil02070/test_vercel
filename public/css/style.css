@@ -87,8 +87,11 @@
     height: 87vh;
 }
 /* --------------------------------------------Inventory-------------------------------------------- */
-.collection:hover, .market:hover{
+/* .collection:hover, .market:hover{
     /* background:#ffffff; */
+/* } */ 
+.market-section{
+    display: none;
 }
 /* --------------------------------------------Account-------------------------------------------- */
 #user-orders, #user-history{
