@@ -1,15 +1,25 @@
-console.log('hii');
 function user_details(){
-    console.log('coming');
-    // document.getElementsByClassName('user-details').style.css = 'display: none';
-    document.getElementById('dt-user').style.css = 'display: none';
+    document.getElementById('user-details').style.display = 'block';
+    document.getElementById('user-orders').style.display = 'none';
+    document.getElementById('user-history').style.display = 'none';
 }
 function user_orders(){
-    console.log('coming');
-    document.getElementsByClassName('user-orders').style.cssText = 'display: none';
+    document.getElementById('user-orders').style.display = 'block';
+    document.getElementById('user-details').style.display = 'none';
+    document.getElementById('user-history').style.display = 'none';
 }
 function user_history(){
-    console.log('coming');
-    document.getElementsByClassName('user-history').style.cssText = 'display: none';
+    document.getElementById('user-history').style.display = 'block';
+    document.getElementById('user-details').style.display = 'none';
+    document.getElementById('user-orders').style.display = 'none';
 }
 
+function get_collection(){
+    document.getElementById('collection-section').style.display = 'block';
+    document.getElementById('mp-section').style.displat = 'none';
+}
+function get_MP(){
+    console.log('hii');
+    document.getElementById('collection-section').style.display = 'none';
+    document.getElementById('mp-section').style.displat = 'block';
+}

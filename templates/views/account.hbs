@@ -20,11 +20,11 @@
                     <li class="border border-1 active" id="detail"><button onclick="user_details()" class="btn bg-none text-white text-start w-100 py-3 px-4">User Details</button></li>
                     <li class="border border-1 " id="order"><button onclick="user_orders()" class="btn bg-none text-white text-start w-100 py-3 px-4">Orders</button></li>
                     <li class="border border-1 " id="history"><button onclick="user_history()" class="btn bg-none text-white text-start w-100 py-3 px-4">History</button></li>
-                    <li class="border border-1 py-3 px-4" id="log_out"><a href="/logout" class="text-white">Logout</a></li>
+                    <li class="border border-1 " id="log_out"><a href="/logout" class="text-white"><button class="btn bg-none text-white text-start w-100 py-3 px-4">Logout</button></a></li>
                 </ul>
             </div>
             <div class="col-8">
-                <div class="user-details">
+                <div id="user-details">
                     <div class="profile">
                         <img src="" alt="profile" class="rounded-circle border w-50 m-auto h-75">
                     </div>
@@ -33,10 +33,10 @@
                     <h6 class="text-light mt-3">Phone No. : <span class="ms-5 text-secondary">{{c_user_number}}</span></h6>
                     <h6 class="text-light mt-3">User ID. : <span class="ms-5 text-secondary">{{user_id}}</span></h6>
                 </div>
-                <div class="user-orders">
+                <div id="user-orders">
                     <h2>No orders yet..</h2>
                 </div>
-                <div class="user-history">
+                <div id="user-history">
                     <h2>Available Soon</h2>
                 </div>
             </div>

@@ -88,9 +88,13 @@
 }
 /* --------------------------------------------Inventory-------------------------------------------- */
 .collection:hover, .market:hover{
-    background: lightgoldenrodyellow;
-    color: black !important;
+    /* background:#ffffff; */
 }
+/* --------------------------------------------Account-------------------------------------------- */
+#user-orders, #user-history{
+    display: none;
+}
+
 
 /* --------------------------------------------Contact-------------------------------------------- */
 .contact-sec{
