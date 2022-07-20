@@ -35,6 +35,7 @@ app.use(session({
     secret: 'asdfhrfbgjhgr',
     resave: false,
     saveUninitialized: true,
+    cookie: { maxAge: 60000 }
 }))
 
 require("./source/db/conn");
