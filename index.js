@@ -39,6 +39,7 @@ app.use(session({
 
 require("./source/db/conn");
 const Register = require('./source/models/registers');
+const Collection = require('./source/models/collection');
 const { Session } = require('inspector');
 
 const static_path = path.join(__dirname,"./public");  
