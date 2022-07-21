@@ -35,7 +35,7 @@ app.use(session({
     secret: 'asdfhrfbgjhgr',
     resave: false,
     saveUninitialized: true,
-    cookie: { maxAge: 60000 }
+    // cookie: { maxAge: 60000 }
 }))
 
 require("./source/db/conn");
@@ -181,7 +181,7 @@ app.post('/login',async(req,res)=>{
         const user_email = await Register.findOne({email:email}); 
         const name = user_email.name;
         if(user_email.password === password){
-
+            // console.log(req.session)
             req.session.name = name;
             req.session.email = user_email.email;
             req.session.number = user_email.number;
