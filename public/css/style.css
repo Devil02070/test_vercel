@@ -96,11 +96,11 @@
 .collection{
     border-right: 1px solid white;
 }
-.market, .collection{
-    text-decoration: none; 
-    outline:none;
-    /* border: none !important; */
-    /* border-bottom: 2px solid white; */
+.market h5, .collection h5{
+    font-size: 19px;
+}
+.market:hover, .collection:hover{
+    cursor: pointer;
 }
 /* --------------------------------------------Account-------------------------------------------- */
 #user-orders, #user-history{
