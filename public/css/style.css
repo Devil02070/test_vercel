@@ -63,6 +63,9 @@
     font-weight: 700;
     letter-spacing: 3px;
 }
+.err-msg{
+    color: #b4ff00;
+}
 /* ---------------------------------------Dashboard--------------------------------------- */
 .dashboard{
     background-image: url('../img/hero-bg.png');

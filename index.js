@@ -199,10 +199,10 @@ app.post('/login',async(req,res)=>{
             })
         }
     }catch(error){
-        res.redirect('/');
-        // res.render('login', { 
-        //     login_err: "Invalid Details.. Please Register First.!"
-        // });
+        // res.redirect('/');
+        res.render('login', { 
+            login_err: "Invalid Details.. Please Register First.!"
+        });
         // res.status(400).send("Invalid email! Please Register First.");
     }
 })
