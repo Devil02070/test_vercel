@@ -48,7 +48,7 @@
 }
 
 /* ---------------------------------------Login-------------------------------- */
-.login-sec,.reg-sec,.banner{
+.login-sec,.reg-sec,.banner, .err-sec{
     height: 100vh;
 }
 .reg-sec{
@@ -106,6 +106,12 @@
     cursor: pointer;
 }
 /* --------------------------------------------Account-------------------------------------------- */
+.account-sec{
+    height: 70vh;
+}
+.acc-tab li{
+    list-style: none;
+}
 #user-orders, #user-history{
     display: none;
 }

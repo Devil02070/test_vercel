@@ -117,6 +117,9 @@ app.get("/logout", (req,res)=>{
         }
     })
 })
+app.get('*',(req,res)=>{
+    res.render("error");
+})
 
 app.listen(port, ()=>{
     console.log(`Server running at port ${port}`); 
